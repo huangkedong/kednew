@@ -11,6 +11,7 @@ namespace kednew
         static void Main(string[] args)
         {
             Console.WriteLine("this is first line");
+            Console.WriteLine("this is second line");
         }
     }
 }
