@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendMailbyID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MailGruop" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailbyIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMailbyIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailbyName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="toAddressName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccAddressName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailbyNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMailbyNameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailbyGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MailGroup" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IsDynAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AttachFilePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailbyGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMailbyGroupResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailbyGID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MailGroup" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IsDynAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AttachFilePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailbyGIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMailbyGIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendMailbyIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMailbyID" />
+  </wsdl:message>
+  <wsdl:message name="SendMailbyIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailbyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMailbyNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMailbyName" />
+  </wsdl:message>
+  <wsdl:message name="SendMailbyNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailbyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMailbyGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMailbyGroup" />
+  </wsdl:message>
+  <wsdl:message name="SendMailbyGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailbyGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMailbyGIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMailbyGID" />
+  </wsdl:message>
+  <wsdl:message name="SendMailbyGIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailbyGIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MailAppSoap">
+    <wsdl:operation name="SendMailbyID">
+      <wsdl:input message="tns:SendMailbyIDSoapIn" />
+      <wsdl:output message="tns:SendMailbyIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMailbyName">
+      <wsdl:input message="tns:SendMailbyNameSoapIn" />
+      <wsdl:output message="tns:SendMailbyNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMailbyGroup">
+      <wsdl:input message="tns:SendMailbyGroupSoapIn" />
+      <wsdl:output message="tns:SendMailbyGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMailbyGID">
+      <wsdl:input message="tns:SendMailbyGIDSoapIn" />
+      <wsdl:output message="tns:SendMailbyGIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MailAppSoap" type="tns:MailAppSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMailbyID">
+      <soap:operation soapAction="http://tempuri.org/SendMailbyID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailbyName">
+      <soap:operation soapAction="http://tempuri.org/SendMailbyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailbyGroup">
+      <soap:operation soapAction="http://tempuri.org/SendMailbyGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailbyGID">
+      <soap:operation soapAction="http://tempuri.org/SendMailbyGID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MailAppSoap12" type="tns:MailAppSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMailbyID">
+      <soap12:operation soapAction="http://tempuri.org/SendMailbyID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailbyName">
+      <soap12:operation soapAction="http://tempuri.org/SendMailbyName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailbyGroup">
+      <soap12:operation soapAction="http://tempuri.org/SendMailbyGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailbyGID">
+      <soap12:operation soapAction="http://tempuri.org/SendMailbyGID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MailApp">
+    <wsdl:port name="MailAppSoap" binding="tns:MailAppSoap">
+      <soap:address location="http://172.16.2.50/QSMC/Service/MM/MailApp.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MailAppSoap12" binding="tns:MailAppSoap12">
+      <soap12:address location="http://172.16.2.50/QSMC/Service/MM/MailApp.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
